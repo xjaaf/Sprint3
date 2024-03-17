@@ -10,5 +10,6 @@ class TestController extends ApplicationController
 	public function checkAction()
 	{
 		echo "hello from test::check";
+		echo "prueba de la prueba";
 	}
 }
