@@ -4,6 +4,7 @@ require_once(__DIR__ . "/../models/TaskModel.php");
 class ApplicationController extends Controller
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     private $tasks;
 
     public function __construct()
@@ -24,3 +25,7 @@ class ApplicationController extends Controller
     }
 }
 >>>>>>> 6262fa5 (metodo create inicializado)
+=======
+
+}
+>>>>>>> 7f50843 (borrado prueba)
