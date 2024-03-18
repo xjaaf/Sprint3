@@ -6,8 +6,5 @@
  */
 class ApplicationController extends Controller 
 {
-	public function create()
-    {
-        
-    }
+
 }
