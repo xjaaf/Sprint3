@@ -3,6 +3,7 @@ require_once(__DIR__ . "/../models/TaskModel.php");
 
 class ApplicationController extends Controller
 {
+<<<<<<< HEAD
     private $tasks;
 
     public function __construct()
@@ -16,3 +17,10 @@ class ApplicationController extends Controller
         $this->view->taskList = $taskList;
     }
 }
+=======
+	public function create()
+    {
+        
+    }
+}
+>>>>>>> 6262fa5 (metodo create inicializado)
