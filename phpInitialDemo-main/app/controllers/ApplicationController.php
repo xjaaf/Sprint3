@@ -5,6 +5,7 @@ class ApplicationController extends Controller
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     private $tasks;
 
     public function __construct()
@@ -29,3 +30,10 @@ class ApplicationController extends Controller
 
 }
 >>>>>>> 7f50843 (borrado prueba)
+=======
+public function pruebaAction(){
+    echo"hola";
+    return $this->view;
+}
+} 
+>>>>>>> d2180e1 (borrados de pruebas)
