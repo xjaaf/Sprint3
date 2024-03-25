@@ -6,5 +6,8 @@
  */
 class ApplicationController extends Controller 
 {
-
+public function pruebaAction(){
+    echo"hola";
+    return $this->view;
 }
+} 
