@@ -10,7 +10,6 @@
  * '/calendar' => 'calendar#index'
  */
 $routes = array(
-	'/test' => 'Application#index',
 	'/' => 'Application#index'
 )
 ?>
