@@ -9,6 +9,8 @@
  * '/' => 'index#index',
  * '/calendar' => 'calendar#index'
  */
-$routes = array(
-	'/test' => 'test#index'
+$routes = array ( 
+	'/' => 'Application#index'
 );
+
+	
