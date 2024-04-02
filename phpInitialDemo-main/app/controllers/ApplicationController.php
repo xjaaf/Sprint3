@@ -17,4 +17,8 @@ public function showTasksAction(){
     $taskList = $this->tasks->showTasks();
     $this->view->taskList = $taskList;
 }
+public function createTaskAction(){
+
+ $this->view;
+}
 } 
