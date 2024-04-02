@@ -1,0 +1,66 @@
+[
+    {
+        "id": "1",
+        "description": "dar de comer al canario",
+        "responsible": "Jose",
+        "startTask": "2024-03-17",
+        "status": "finished",
+        "endTask": "2024-03-18"
+    },
+    {
+        "id": "2",
+        "description": "cantar para ahuyentar las penas",
+        "responsible": "Pablo",
+        "startTask": "2024-03-20",
+        "status": "in progress",
+        "endTask": "2024-03-23"
+    },
+    {
+        "id": "3",
+        "description": "quitar la paja del ojo ajeno",
+        "responsible": "Pablo",
+        "startTask": "2024-03-15",
+        "status": "pending",
+        "endTask": "2024-03-30"
+    },
+    {
+        "id": "4",
+        "description": "preguntar para llegar a Roma",
+        "responsible": "Jose",
+        "startTask": "2024-02-11",
+        "status": "in progress",
+        "endTask": "2024-04-30"
+    },
+    {
+        "id": "5",
+        "description": "madrugar para amanecer m\u00e1s tarde",
+        "responsible": "Pablo",
+        "startTask": "2024-04-3",
+        "status": "pending",
+        "endTask": "2024-04-30"
+    },
+    {
+        "id": "6",
+        "description": "encontrar la casualidad perfecta",
+        "responsible": "Jose",
+        "startTask": "2024-03-7",
+        "status": "in progress",
+        "endTask": "2024-03-31"
+    },
+    {
+        "id": "7",
+        "description": "planificar no hacer nada",
+        "responsible": "Pablo",
+        "startTask": "2024-03-22",
+        "status": "finished",
+        "endTask": "2024-03-23"
+    },
+    {
+        "id": "8",
+        "description": "sacudir el polvo de la alfombra",
+        "responsible": "Jose",
+        "startTask": "2024-01-15",
+        "status": "in progress",
+        "endTask": "2024-04-3"
+    }
+]
