@@ -25,6 +25,7 @@ class ApplicationController extends Controller
         
     }
 }
+<<<<<<< HEAD
 >>>>>>> 6262fa5 (metodo create inicializado)
 =======
 
@@ -37,3 +38,10 @@ public function pruebaAction(){
 }
 } 
 >>>>>>> d2180e1 (borrados de pruebas)
+=======
+public function createTaskAction(){
+
+ $this->view;
+}
+} 
+>>>>>>> d756344 (forma created)

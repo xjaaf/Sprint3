@@ -10,9 +10,14 @@
  * '/calendar' => 'calendar#index'
  */
 $routes = array(
+<<<<<<< HEAD:config/routes.php
 	'/test' => 'test#index',
 	'/' => 'application#prueba',
 
 	'/prueba' => 'application#prueba'
 
+=======
+	'/' => 'Application#showTasks',
+	'/createTask' => 'Application#createTask'
+>>>>>>> d756344 (forma created):phpInitialDemo-main/config/routes.php
 );
