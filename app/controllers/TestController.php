@@ -6,10 +6,9 @@ class TestController extends ApplicationController
 	{
 		$this->view->message = "hello from test::index";
 	}
-
+	
 	public function checkAction()
 	{
 		echo "hello from test::check";
-		echo "hola";
 	}
 }
