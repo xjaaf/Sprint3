@@ -1,4 +1,3 @@
-
 [
     {
         "id": "1",
@@ -34,7 +33,7 @@
     },
     {
         "id": "5",
-        "description": "madrugar para amanecer más tarde",
+        "description": "madrugar para amanecer m\u00e1s tarde",
         "responsible": "Pablo",
         "startTask": "2024-04-3",
         "status": "pending",
@@ -65,5 +64,3 @@
         "endTask": "2024-04-3"
     }
 ]
-
-
