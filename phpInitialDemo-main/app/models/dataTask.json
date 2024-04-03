@@ -1,26 +1,18 @@
 {
-    "1": {
-        "description": "play",
+    "0": {
+        "description": "limpiar",
         "responsible": "hose",
-        "startTask": "2424-04-09",
-        "status": "pending",
+        "startTask": "2424-04-10",
+        "status": "Initialized",
         "endTask": "2424-04-10",
-        "id": 2
+        "id": 1
     },
     "2": {
-        "description": "zlfgu",
-        "responsible": "Amanda",
-        "startTask": "2424-04-15",
-        "status": "pending",
-        "endTask": "2424-04-15",
+        "description": "limpiar",
+        "responsible": "hose",
+        "startTask": "2424-04-09",
+        "status": "Initialized",
+        "endTask": "2424-04-23",
         "id": 3
-    },
-    "4": {
-        "description": "play",
-        "responsible": "jose",
-        "startTask": "2424-04-08",
-        "status": "pending",
-        "endTask": "2424-04-08",
-        "id": 5
     }
 }

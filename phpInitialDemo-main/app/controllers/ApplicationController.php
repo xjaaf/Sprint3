@@ -91,6 +91,18 @@ public function createTaskAction(){
             exit();
         }
     }
+    public function editTaskAction()
+{
+    if ($_SERVER["REQUEST_METHOD"] === "GET") {
+        $taskId = $_GET['taskId']; // Obtener el ID de la tarea a editar
+        // You can add further validation here if required
+
+        // Redirect to the edit task form with the task ID
+        header('Location: ' . $this->_baseUrl() . '/editTask?taskId=' . $taskId);
+        exit();
+    }
+}
+    
 }
 <<<<<<< HEAD
 } 
