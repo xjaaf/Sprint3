@@ -57,8 +57,5 @@ class TaskModel extends Model
         $dbTask = json_encode($this->task, JSON_PRETTY_PRINT);
         file_put_contents($this->dbTask, $dbTask);
     }
-
-
-    
 }
 ?>
