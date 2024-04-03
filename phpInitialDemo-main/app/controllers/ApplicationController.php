@@ -49,5 +49,4 @@ class ApplicationController extends Controller
             exit();
         }
     }
-
 }
