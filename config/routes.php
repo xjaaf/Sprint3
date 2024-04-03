@@ -11,6 +11,7 @@
  */
 $routes = array(
 <<<<<<< HEAD:config/routes.php
+<<<<<<< HEAD:config/routes.php
 	'/test' => 'test#index',
 	'/' => 'application#prueba',
 
@@ -21,3 +22,10 @@ $routes = array(
 	'/createTask' => 'Application#createTask'
 >>>>>>> d756344 (forma created):phpInitialDemo-main/config/routes.php
 );
+=======
+    '/' => 'Application#showTasks',
+    '/deleteTask' => 'Application#deleteTask',
+    '/createTask' => 'Application#createTask',
+    '/showTasks' => 'Application#showTasks', 
+);
+>>>>>>> 03cbd1e (modificaciones en view create):phpInitialDemo-main/config/routes.php
