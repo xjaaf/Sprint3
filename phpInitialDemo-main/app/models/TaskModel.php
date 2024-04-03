@@ -57,5 +57,20 @@ class TaskModel extends Model
         $dbTask = json_encode($this->task, JSON_PRETTY_PRINT);
         file_put_contents($this->dbTask, $dbTask);
     }
+    public function editTask($editedTask)
+    {
+        $this->showTasks();
+        foreach ($this->task as $key => $task) {
+            if ($task['id'] == $editedTask['id']) { // Match task ID
+                // Update the task with edited data
+                $this->task[$key] = $editedTask;
+                break;
+            }
+        }
+    
+        $dbTask = json_encode($this->task, JSON_PRETTY_PRINT);
+        file_put_contents($this->dbTask, $dbTask);
+    }
+    
 }
 ?>
