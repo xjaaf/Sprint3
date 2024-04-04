@@ -14,6 +14,6 @@ $routes = array(
     '/deleteTask' => 'Application#deleteTask',
     '/createTask' => 'Application#createTask',
     '/showTasks' => 'Application#showTasks',
-    '/editTask' => 'Application#editTask'
-
+    '/editTask' => 'Application#editTask', // Ruta para la acción de editar tarea
+    '/updateTask' => 'Application#showTasks', // Ruta para la acción de actualizar tarea
 );

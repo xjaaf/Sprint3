@@ -1,9 +1,6 @@
 <?php
 require_once(__DIR__ . "/../models/TaskModel.php");
-/**
- * Base controller for the application.
- * Add general things in this controller.
- */
+
 class ApplicationController extends Controller
 {
     private $tasks;
@@ -12,32 +9,47 @@ class ApplicationController extends Controller
     {
         $this->tasks = new TaskModel();
     }
+
     public function showTasksAction()
     {
         $taskList = $this->tasks->showTasks();
         $this->view->taskList = $taskList;
     }
+
     public function createTaskAction()
     {
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $description = $this->_getParam('description');
             $responsible = $this->_getParam('responsible');
-            $startTask = date_create($_POST['startTask'])->format('yy-m-d');
+            $startTask = $_POST['startTask'];
             $status = $this->_getParam('status');
-            $endTask = date_create($_POST['endTask'])->format('yy-m-d');
+            $endTask = $_POST['endTask'];
 
-            $newTask = [
-                'description' => $description,
-                'responsible' => $responsible,
-                'startTask' => $startTask,
-                'status' => $status,
-                'endTask' => $endTask,
-            ];
+            // Validar las fechas
+            if ($this->validateDates($startTask, $endTask)) {
+                $newTask = [
+                    'description' => $description,
+                    'responsible' => $responsible,
+                    'startTask' => $startTask,
+                    'status' => $status,
+                    'endTask' => $endTask,
+                ];
 
-            $this->tasks->createTask($newTask);
-            header('Location: ' . $this->_baseUrl());
-            exit();
+                $this->tasks->createTask($newTask);
+                header('Location: ' . $this->_baseUrl());
+                exit();
+            } else {
+                // Mostrar un mensaje de error
+                echo "<script>alert('Error: La fecha de fin no puede ser anterior a la fecha de inicio.');</script>";
+            }
         }
+    }
+
+    private function validateDates($startTask, $endTask)
+    {
+        $startDate = strtotime($startTask);
+        $endDate = strtotime($endTask);
+        return $endDate >= $startDate;
     }
 
     public function deleteTaskAction()
@@ -49,16 +61,47 @@ class ApplicationController extends Controller
             exit();
         }
     }
-    public function editTaskAction()
-{
-    if ($_SERVER["REQUEST_METHOD"] === "GET") {
-        $taskId = $_GET['taskId']; // Obtener el ID de la tarea a editar
-        // You can add further validation here if required
 
-        // Redirect to the edit task form with the task ID
-        header('Location: ' . $this->_baseUrl() . '/editTask?taskId=' . $taskId);
-        exit();
+    public function editTaskAction()
+    {
+        if ($_SERVER["REQUEST_METHOD"] === "GET") {
+            $taskId = $this->_getParam('taskId');
+
+            // Obtener los datos de la tarea seleccionada
+            $taskData = $this->tasks->getTaskById($taskId);
+
+            // Pasar los datos de la tarea a la vista
+            $this->view->task = $taskData;
+        }
     }
-}
+
+    public function updateTaskAction()
+    {
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            $updatedTask = [
+                'id' => $_POST['id'],
+                'description' => $_POST['description'],
+                'responsible' => $_POST['responsible'],
+                'startTask' => $_POST['startTask'],
+                'endTask' => $_POST['endTask'],
+                'status' => $_POST['status']
+            ];
     
+            // Actualizar la tarea en la base de datos
+            $result = $this->tasks->updateTask($updatedTask);
+    
+            if ($result) {
+                // Redirigir al usuario de vuelta a la página principal de tareas
+                header('Location: ' . $this->_baseUrl());
+                exit();
+            } else {
+                // Manejar el error si la actualización falla
+                echo "Error: Failed to update task.";
+            }
+        }
+    }
+    
+
+
+
 }
