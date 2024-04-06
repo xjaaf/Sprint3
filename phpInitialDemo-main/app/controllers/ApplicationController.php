@@ -127,32 +127,31 @@ public function createTaskAction(){
     }
 
     public function updateTaskAction()
-    {
-        if ($_SERVER["REQUEST_METHOD"] === "POST") {
-            $updatedTask = [
-                'id' => $_POST['id'],
-                'description' => $_POST['description'],
-                'responsible' => $_POST['responsible'],
-                'startTask' => $_POST['startTask'],
-                'endTask' => $_POST['endTask'],
-                'status' => $_POST['status']
-            ];
-    
-            // Actualizar la tarea en la base de datos
-            $result = $this->tasks->updateTask($updatedTask);
-    
-            if ($result) {
-                // Redirigir al usuario de vuelta a la página principal de tareas
-                header('Location: ' . $this->_baseUrl());
-                exit();
-            } else {
-                // Manejar el error si la actualización falla
-                echo "Error: Failed to update task.";
-            }
+{
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        // Obtener los datos de la tarea a actualizar
+        $updatedTask = [
+            'id' => $_POST['id'],
+            'description' => $_POST['description'],
+            'responsible' => $_POST['responsible'],
+            'startTask' => $_POST['startTask'],
+            'endTask' => $_POST['endTask'],
+            'status' => $_POST['status']
+        ];
+
+        // Actualizar la tarea en la base de datos
+        $result = $this->tasks->updateTask($updatedTask);
+
+        if ($result) {
+            // Redirigir al usuario de vuelta a la página principal de tareas
+            header('Location: ' . $this->_baseUrl('tasks/showTasks'));
+            exit();
+        } else {
+            // Manejar el error si la actualización falla
+            echo "Error: Failed to update task.";
         }
     }
-    
-
+}
 
 
 }
