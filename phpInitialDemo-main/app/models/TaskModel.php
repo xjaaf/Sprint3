@@ -52,5 +52,18 @@ class TaskModel extends Model
         $dbTask = json_encode($this->task, JSON_PRETTY_PRINT);
         file_put_contents($this->dbTask, $dbTask);
     }
+    public function deleteTask($taskId)
+    {
+        $this->showTasks();
+        foreach ($this->task as $key => $task) {
+            if ($task['id'] == $taskId) {
+                unset($this->task[$key]);
+                break;
+            }
+        }
+
+        $dbTask = json_encode($this->task, JSON_PRETTY_PRINT);
+        file_put_contents($this->dbTask, $dbTask);
+    }
 
 }
