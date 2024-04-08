@@ -16,6 +16,7 @@ class ApplicationController extends Controller
         $this->view->taskList = $taskList;
     }
 
+
     public function createTaskAction()
     {
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -106,3 +107,4 @@ class ApplicationController extends Controller
         }
     }
 }
+

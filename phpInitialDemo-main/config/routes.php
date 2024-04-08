@@ -10,11 +10,7 @@
  * '/calendar' => 'calendar#index'
  */
 $routes = array(
-    '/' => 'Application#showTasks',
-    '/deleteTask' => 'Application#deleteTask',
-    '/createTask' => 'Application#createTask',
-    '/showTasks' => 'Application#showTasks',
-    '/editTask' => 'Application#editTask', // Ruta para la acción de editar tarea
-    '/updateTask' => 'Application#updateTask', // Ruta para la acción de actualizar tarea
-    
+
+	'/test' => 'test#index',
+	'/' => 'Application#showTasks',
 );
