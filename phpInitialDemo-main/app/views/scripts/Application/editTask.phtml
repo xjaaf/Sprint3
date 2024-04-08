@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Task</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5">
+        <div class="mx-auto max-w-screen-xl px-4 lg:px-12">
+            <!-- Start coding here -->
+            <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
+                <div class="p-4">
+                    <h1 class="text-2xl font-semibold text-gray-800 dark:text-gray-100">Edit Task</h1>
+                    <form action="<?php echo WEB_ROOT ?>/updateTask" method="post" class="mt-4">
+                        <input type="hidden" name="id" value="<?php echo $this->task['id'] ?>">
+                        <div class="mb-4">
+                            <label for="description" class="block text-gray-800 dark:text-gray-200">Task Description</label>
+                            <input type="text" id="description" name="description" value="<?php echo $this->task['description'] ?>" class="form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="type here" required />
+                        </div>
+                        <div class="mb-4">
+                            <label for="responsible" class="block text-gray-800 dark:text-gray-200">Author</label>
+                            <input type="text" id="responsible" name="responsible" value="<?php echo $this->task['responsible'] ?>" class="form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+                        </div>
+                        <div class="mb-4">
+                            <label for="startTask" class="block text-gray-800 dark:text-gray-200">Start Date</label>
+                            <input type="date" id="startTask" name="startTask" value="<?php echo $this->task['startTask'] ?>" class="form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+                        </div>
+                        <div class="mb-4">
+                            <label for="endTask" class="block text-gray-800 dark:text-gray-200">End Date</label>
+                            <input type="date" id="endTask" name="endTask" value="<?php echo $this->task['endTask'] ?>" class="form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
+                        </div>
+                        <div class="mb-4">
+                            <label for="status" class="block text-gray-800 dark:text-gray-200">Status</label>
+                            <select id="status" name="status" class="form-select mt-1 block w-full rounded-md border-gray-300 shadow-sm dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light">
+                                <option value="Pending" <?php echo ($this->task['status'] === 'Pending') ? 'selected' : '' ?>>Pending</option>
+                                <option value="Finished" <?php echo ($this->task['status'] === 'Finished') ? 'selected' : '' ?>>Finished</option>
+                                <option value="Initialized" <?php echo ($this->task['status'] === 'Initialized') ? 'selected' : '' ?>>Initialized</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Update Task</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
