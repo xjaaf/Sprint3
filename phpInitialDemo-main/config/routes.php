@@ -25,7 +25,8 @@ $routes = array(
 	'/' => 'Application#showTasks',
 	'/createTask' => 'Application#createTask',
     '/showTasks' => 'Application#showTasks',
-	'/deleteTask' => 'Application#deleteTask'
-
+	'/deleteTask' => 'Application#deleteTask',
+	'/editTask' => 'Application#editTask', // Ruta para la acción de editar tarea
+    '/updateTask' => 'Application#updateTask', // Ruta para la acción de actualizar tarea
 );
 >>>>>>> b656928 (creat created)

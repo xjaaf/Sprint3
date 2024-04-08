@@ -111,10 +111,50 @@ public function createTaskAction(){
             exit();
         }
     }
+    public function editTaskAction()
+    {
+        if ($_SERVER["REQUEST_METHOD"] === "GET") {
+            $taskId = $this->_getParam('taskId');
 
+            // Obtener los datos de la tarea seleccionada
+            $taskData = $this->tasks->getTaskById($taskId);
 
+            // Pasar los datos de la tarea a la vista
+            $this->view->task = $taskData;
+        }
+    }
+    public function updateTaskAction()
+    {
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            // Obtener los datos de la tarea a actualizar
+            $updatedTask = [
+                'id' => $_POST['id'],
+                'description' => $_POST['description'],
+                'responsible' => $_POST['responsible'],
+                'startTask' => $_POST['startTask'],
+                'endTask' => $_POST['endTask'],
+                'status' => $_POST['status']
+            ];
 
+            // Actualizar la tarea en la base de datos
+            $result = $this->tasks->updateTask($updatedTask);
+
+            if ($result) {
+                // Redirigir al usuario de vuelta a la página principal de tareas
+
+                header('Location: ' . $this->_baseUrl() . '/showTasks');
+
+                exit();
+            } else {
+                $msg = "error";
+                $this->view->msg = $msg;
+                // Manejar el error si la actualización falla
+                //echo "Error: Failed to update task.";
+            }
+        }
+    }
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 
@@ -126,3 +166,5 @@ public function createTaskAction(){
 >>>>>>> 59cf98d (fixed date format, json permition ables)
 =======
 >>>>>>> 0ea3b20 (app funcionando)
+=======
+>>>>>>> 1b584d3 (update added)
