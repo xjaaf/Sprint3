@@ -79,32 +79,27 @@ class TaskModel extends Model
     }
 
     public function updateTask($updatedTask)
-{
-    $taskList = $this->showTasks(); // Cargar tareas
+    {
+        $taskList = $this->showTasks(); // Cargar tareas
 
-    // Validar el formato de ID y datos actualizados (considerar funciones de validación)
-    if (!isset($updatedTask['id']) || !is_numeric($updatedTask['id'])) {
-        // Manejar ID inválido
-        return false; // O lanzar una excepción
-    }
+        $taskId = $updatedTask['id'];
 
-    $taskId = $updatedTask['id'];
-    $found = false;
-    foreach ($taskList as $key => $task) {
-        if ($task["id"] === $taskId) {
-            $taskList[$key] = $updatedTask; // Actualizar tarea
-            $found = true;
-            break;
+        //  var_dump($taskId);
+        foreach ($taskList as $key => $task) {
+            if ($task["id"] == $taskId) {
+
+                $taskList[$key] = $updatedTask;
+            }
+        }
+        // var_dump($updatedTask);
+        $updatedData = json_encode($taskList, JSON_PRETTY_PRINT); // Formatear JSON
+        $result = file_put_contents($this->dbTask, $updatedData); // Actualizar archivo de datos
+        // var_dump($this->showTasks());
+        return true;
+
+        if (!$result) {
+
+            return false; // O lanzar una excepción
         }
     }
-
-    if (!$found) {
-        // Manejar tarea no encontrada
-        return false; // O lanzar una excepción
-    }
-
-    $updatedData = json_encode($taskList, JSON_PRETTY_PRINT); // Formatear JSON
-    return file_put_contents($this->dbTask, $updatedData); // Actualizar archivo de datos
-}
-
 }
