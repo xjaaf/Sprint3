@@ -10,6 +10,7 @@
  * '/calendar' => 'calendar#index'
  */
 $routes = array(
+<<<<<<< HEAD
     '/' => 'Application#showTasks',
     '/deleteTask' => 'Application#deleteTask',
     '/createTask' => 'Application#createTask',
@@ -18,3 +19,12 @@ $routes = array(
     '/updateTask' => 'Application#updateTask', // Ruta para la acción de actualizar tarea
     
 );
+=======
+
+	'/test' => 'test#index',
+	'/' => 'Application#showTasks',
+	'/createTask' => 'Application#createTask',
+    '/showTasks' => 'Application#showTasks',
+
+);
+>>>>>>> b656928 (creat created)
