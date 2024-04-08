@@ -102,6 +102,16 @@ public function createTaskAction(){
         $endDate = strtotime($endTask);
         return $endDate >= $startDate;
     }
+    public function deleteTaskAction()
+    {
+        if ($_SERVER["REQUEST_METHOD"] === "GET") {
+            $taskId = $_GET['taskId'];
+            $this->tasks->deleteTask($taskId);
+            header('Location: ' . $this->_baseUrl());
+            exit();
+        }
+    }
+
 
 
 }
