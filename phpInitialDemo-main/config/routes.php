@@ -11,6 +11,7 @@
  */
 $routes = array(
 <<<<<<< HEAD
+<<<<<<< HEAD
     '/' => 'Application#showTasks',
     '/deleteTask' => 'Application#deleteTask',
     '/createTask' => 'Application#createTask',
@@ -18,6 +19,16 @@ $routes = array(
     '/editTask' => 'Application#editTask', // Ruta para la acción de editar tarea
     '/updateTask' => 'Application#updateTask', // Ruta para la acción de actualizar tarea
     
+=======
+
+	'/test' => 'test#index',
+	'/' => 'Application#showTasks',
+	'/createTask' => 'Application#createTask',
+    '/showTasks' => 'Application#showTasks',
+	'/deleteTask' => 'Application#deleteTask',
+	'/editTask' => 'Application#editTask', // Ruta para la acción de editar tarea
+    '/updateTask' => 'Application#updateTask', // Ruta para la acción de actualizar tarea
+>>>>>>> develop
 );
 =======
 

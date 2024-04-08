@@ -1,7 +1,11 @@
 {
     "9": {
         "id": "10",
+<<<<<<< HEAD
         "description": "Leerrrrrrrr",
+=======
+        "description": "noooooooo",
+>>>>>>> develop
         "responsible": "Jose",
         "startTask": "2024-04-09",
         "endTask": "2024-04-15",
@@ -15,6 +19,7 @@
         "endTask": "2024-05-09",
         "id": 11
     },
+<<<<<<< HEAD
     "12": {
         "id": "13",
         "description": "siiiiiiii",
@@ -22,5 +27,14 @@
         "startTask": "2024-04-18",
         "endTask": "2024-04-23",
         "status": "Pending"
+=======
+    "11": {
+        "description": "NOOOOOOOO",
+        "responsible": "jose",
+        "startTask": "2024-04-15",
+        "status": "Pending",
+        "endTask": "2024-04-29",
+        "id": 12
+>>>>>>> develop
     }
 }
